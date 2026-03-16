@@ -12,6 +12,5 @@ public class TestingStuff : NetworkBehaviour
     private void OnMouseDown()
     {
         HelloServerRpc();
-        GameManager.Instance.ClickedOnSomething();
     }
 }
