@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d40ffcc0-efdb-4037-9c66-22d79e1825c2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.CardGameChaos/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.CardGameChaos/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.CardGameChaos/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.CardGameChaos/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/DefaultNetworkPrefabs.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/DefaultNetworkPrefabs.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/DefaultVolumeProfile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/DefaultVolumeProfile.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/InputSystem_Actions.inputactions" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/InputSystem_Actions.inputactions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Prefabs/Circle.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Prefabs/Circle.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scenes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scenes/GameScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scenes/SampleScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scripts/Managers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scripts/Managers/GameManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scripts/TestingStuff.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Scripts/TestingStuff.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Settings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Settings/Lit2DSceneTemplate.scenetemplate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Settings/Lit2DSceneTemplate.scenetemplate.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Settings/Renderer2D.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Settings/Renderer2D.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Settings/Scenes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Settings/Scenes/URP2DSceneTemplate.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Settings/Scenes/URP2DSceneTemplate.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Settings/UniversalRP.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/Settings/UniversalRP.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assets/UniversalRenderPipelineGlobalSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Packages/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Packages/packages-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/ClusterInputManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/InputManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/MemorySettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/MultiplayerManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/NetworkManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/Packages/com.unity.multiplayer.tools/CustomColorSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/PresetManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/TagManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/VFXManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/VersionControlSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/VirtualProjectsConfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjectSettings/XRSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserSettings/Search.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UserSettings/Search.settings" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestingStuff.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="3B1vgtOfbZ2T2onTTd0ax5ofPtA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.64f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\MarkSilvester\PersonalUnityGames\MultiplayerTesting\CardGameChaos -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\MarkSilvester\PersonalUnityGames\MultiplayerTesting\CardGameChaos" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.64f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\MarkSilvester\PersonalUnityGames\MultiplayerTesting\CardGameChaos -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\MarkSilvester\PersonalUnityGames\MultiplayerTesting\CardGameChaos" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d40ffcc0-efdb-4037-9c66-22d79e1825c2" name="Changes" comment="" />
+      <created>1773669505653</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773669505653</updated>
+      <workItem from="1773669508209" duration="3298000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
