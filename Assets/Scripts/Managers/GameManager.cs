@@ -10,8 +10,8 @@ namespace Managers
     {
         public static GameManager Instance { get; private set; }
 
-        public Queue<GameCommand> CommandQueue = new Queue<GameCommand>();
-        public Dictionary<ulong, NetworkPlayer> Players = new Dictionary<ulong, NetworkPlayer>();
+        private Queue<GameCommand> commandQueue = new Queue<GameCommand>();
+        private Dictionary<ulong, NetworkPlayer> players = new Dictionary<ulong, NetworkPlayer>();
         
         private int currentTurn = 0;
         private int maxTurns = 3;
@@ -44,9 +44,9 @@ namespace Managers
         {
             ulong id = player.OwnerClientId;
 
-            if (!Players.ContainsKey(id))
+            if (!players.ContainsKey(id))
             {
-                Players.Add(id, player);
+                players.Add(id, player);
                 
                 Debug.Log($"Player Registered: {id}");
             }
@@ -61,7 +61,7 @@ namespace Managers
                     if (IsServer) DealCards();
                     break;
                 case GameState.Programming:
-                    Debug.Log($"Players can now submit cards");
+                    Debug.Log($"players can now submit cards");
                     break;
                 case GameState.Reveal:
                     if (IsServer)
@@ -81,7 +81,7 @@ namespace Managers
         {
             if (!IsServer) return;
             
-            foreach (var player in Players)
+            foreach (var player in players)
             {
                 if (player.Value.programmedCards.Count <= currentTurn)
                 {
@@ -89,7 +89,7 @@ namespace Managers
                 }
             }
             
-            Debug.Log($"All Players Submitted cards");
+            Debug.Log($"All players Submitted cards");
 
             currentTurn++;
 
@@ -125,13 +125,11 @@ namespace Managers
 
         private void BuildCommandQueue()
         {
-            CommandQueue.Clear();
+            commandQueue.Clear();
             
-            NetworkPlayer[] players = FindObjectsByType<NetworkPlayer>(FindObjectsSortMode.None);
-
             for (int turn = 0; turn < maxTurns; turn++)
             {
-                foreach (var player in players)
+                foreach (var player in players.Values)
                 {
                     GameCommand cmd = new GameCommand
                     {
@@ -140,36 +138,38 @@ namespace Managers
                     };
                     
                     Debug.Log($"PlayerID: {cmd.PlayerId}, CardID: {cmd.CardId}");
-                    CommandQueue.Enqueue(cmd);
+                    commandQueue.Enqueue(cmd);
                 }
             }
         }
 
         private void ExecuteNextCommand()
         {
-            Debug.Log($"CommandQueue: {CommandQueue.Count}");
-            if (CommandQueue.Count == 0)
+            Debug.Log($"CommandQueue: {commandQueue.Count}");
+            if (commandQueue.Count == 0)
             {
+                Debug.Log($"All Commands Executed");
                 SetGameState(GameState.RoundEnd);
                 return;
             }
 
-            GameCommand cmd = CommandQueue.Dequeue();
+            GameCommand cmd = commandQueue.Dequeue();
             ExecuteCommand(cmd);
+
+            ExecuteNextCommand();
         }
 
         private void ExecuteCommand(GameCommand cmd)
         {
             Debug.Log($"Command: Player: {cmd.PlayerId}, Card: {cmd.CardId}");
-
-            ExecuteNextCommand();
+            
         }
 
         private void OnClientDisconnected(ulong clientId)
         {
-            if (Players.ContainsKey(clientId))
+            if (players.ContainsKey(clientId))
             {
-                Players.Remove(clientId);
+                players.Remove(clientId);
                 
                 Debug.Log($"Player Removed: {clientId}");
             }
@@ -181,7 +181,7 @@ namespace Managers
 
             if (gameState.Value == GameState.WaitingForPlayers)
             {
-                if (Players.Count >= 2)
+                if (players.Count >= 2)
                 {
                     StartGame();
                 }
