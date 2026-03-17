@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Database;
 using Player;
 using Structs;
 using Unity.Netcode;
@@ -16,6 +17,8 @@ namespace Managers
         private int currentTurn = 0;
         private int maxTurns = 3;
 
+        private CardDatabase cardDatabase;
+
         public NetworkVariable<GameState> gameState =
             new NetworkVariable<GameState>(GameState.WaitingForPlayers);
         
@@ -28,6 +31,11 @@ namespace Managers
             }
 
             Instance = this;
+        }
+
+        private void Start()
+        {
+            cardDatabase = CardDatabase.Instance;
         }
 
         public override void OnNetworkSpawn()
@@ -97,7 +105,6 @@ namespace Managers
             {
                 SetGameState(GameState.Reveal);
             }
-
         }
 
         private void RevealCards()
@@ -111,15 +118,11 @@ namespace Managers
 
         private void DealCards()
         {
-            Debug.Log($"Dealind Cards");
-            
-            NetworkPlayer[] players = FindObjectsByType<NetworkPlayer>(FindObjectsSortMode.None);
-
-            foreach (NetworkPlayer player in players)
+            foreach (NetworkPlayer player in players.Values)
             {
-                player.GenerateHand();
+                player.DrawHand();
             }
-            
+
             SetGameState(GameState.Programming);
         }
 
@@ -161,8 +164,12 @@ namespace Managers
 
         private void ExecuteCommand(GameCommand cmd)
         {
-            Debug.Log($"Command: Player: {cmd.PlayerId}, Card: {cmd.CardId}");
+            NetworkPlayer player = players[cmd.PlayerId];
+
+            CardData card = cardDatabase.GetCard(cmd.CardId);
             
+            card.effect.Execute(player);
+
         }
 
         private void OnClientDisconnected(ulong clientId)

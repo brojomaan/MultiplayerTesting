@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6074244954438442434}
   - component: {fileID: 2560375779549427167}
   - component: {fileID: 800056790126149317}
+  - component: {fileID: 6161222822128399737}
   m_Layer: 5
-  m_Name: Card
+  m_Name: CardController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6161222822128399737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5738447880944200697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabd90b8a4f84f84b9c91504e7f24009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardController
+  cardVisual: {fileID: 0}

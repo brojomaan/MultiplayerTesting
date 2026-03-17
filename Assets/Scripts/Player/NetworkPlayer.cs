@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cards;
 using Managers;
 using Unity.Netcode;
 using UnityEngine;
@@ -8,43 +9,56 @@ namespace Player
 {
     public class NetworkPlayer : NetworkBehaviour
     {
-        public List<int> hand = new List<int>();
+        public Deck deck = new Deck();
+        public PlayerHand hand = new PlayerHand();
         public List<int> programmedCards = new List<int>();
+
+        private int cardAmount = 7;
 
         public override void OnNetworkSpawn()
         {
             if (!IsServer) return;
             GameManager.Instance.RegisterPlayer(this);
-            GenerateHand();
+            List<int> startDeck = new List<int>()
+            {
+                0, 0, 0, 0, 0, 0,
+                1, 1, 1,
+                2, 2, 2
+            };
+
+            deck.Initialize(startDeck);
+
+            deck.Shuffle();
+
         }
         
-        public void GenerateHand()
+        public void DrawHand()
         {
             hand.Clear();
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < cardAmount; i++)
             {
-                int card = Random.Range(0, 5);
-                hand.Add(card);
+                int card = deck.DrawCard();
+
+                if (card != -1)
+                {
+                    hand.AddCard(card);
+                }
             }
-        
-            SendHandClientRpc(hand.ToArray(), OwnerClientId);
+
+            SendHandToClient();
         }
 
-        [Rpc(SendTo.ClientsAndHost)]
-        private void SendHandClientRpc(int[] cards, ulong targetClient)
+        [Rpc(SendTo.SpecifiedInParams)]
+        private void SendHandRpc(int[] cards, RpcParams rpcParams = default)
         {
-            if (NetworkManager.Singleton.LocalClientId != targetClient)
-                return;
+            if (!IsOwner) return;
+            
+            Debug.Log($"Recieved hand with {cards.Length} cards");
 
-            hand = new List<int>(cards);
+            CardDockController controller = FindFirstObjectByType<CardDockController>();
 
-            /*Debug.Log($"My Hand: ");*/
-
-            for (int i = 0; i < hand.Count; i++)
-            {
-                /*Debug.Log($"slot {i} card {hand[i]}");*/
-            }
+            controller.ShowHand(cards, this);
         }
 
         [Rpc(SendTo.Server)]
@@ -52,14 +66,20 @@ namespace Player
         {
 
             if (GameManager.Instance.gameState.Value != GameState.Programming) return;
-            
-            int card = hand[slot];
+
+            int card = hand.GetCard(slot);
 
             programmedCards.Add(card);
-        
-            /*Debug.Log($"Player: {OwnerClientId} Submitted card {card}");*/
-
+            
             GameManager.Instance.CheckAllPlayersSubmitted();
+        }
+
+        private void SendHandToClient()
+        {
+            SendHandRpc(
+                hand.Cards.ToArray(),
+                RpcTarget.Single(OwnerClientId, RpcTargetUse.Temp)
+            );
         }
 
         private void Update()

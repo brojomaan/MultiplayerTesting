@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8277318893942127748}
+  - component: {fileID: 742745133192675581}
   m_Layer: 5
   m_Name: CardDock
   m_TagString: Untagged
@@ -35,3 +36,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 25}
   m_SizeDelta: {x: 1000, y: 250}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &742745133192675581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454440660399566124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b106f344fc3b22409209cfd09019cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cards.CardDockController
+  cardControllerPrefab: {fileID: 0}
+  cardVisualPrefab: {fileID: 0}
+  rootRect: {fileID: 0}
