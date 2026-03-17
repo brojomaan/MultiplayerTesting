@@ -53,13 +53,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Blur_Offset: 0.002
+    - _Blur_Offset: 0.00065
     - _EnableExternalAlpha: 0
     - _Scan_Lines_Speed: 0.001
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour: {r: 4, g: 4, b: 4, a: 1}
+    - _Colour: {r: 2.9960787, g: 2.9960787, b: 2.9960787, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
