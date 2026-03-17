@@ -88,4 +88,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabd90b8a4f84f84b9c91504e7f24009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardController
-  cardVisual: {fileID: 0}
+  rootRect: {fileID: 6074244954438442434}
+  data: {fileID: 0}
+  visual: {fileID: 0}
+  dock: {fileID: 0}
+  indexInHand: 0
+  owner: {fileID: 0}
+  isSelected: 0
+  isHovered: 0
+  isAnimating: 0
+  isDragging: 0

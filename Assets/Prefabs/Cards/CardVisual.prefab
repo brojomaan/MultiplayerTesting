@@ -313,6 +313,8 @@ MonoBehaviour:
   shakeTransform: {fileID: 5736363495539278228}
   tiltTransform: {fileID: 939390560967912744}
   cardContainer: {fileID: 7577746550788231670}
+  card: {fileID: 5526768170606943759}
+  shadow: {fileID: 4638213184055515263}
   icon: {fileID: 4550700752510515173}
   nameText: {fileID: 4720925783965416836}
   tiltSpeed: 1
