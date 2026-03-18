@@ -3,6 +3,7 @@ using Player;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using UnityEngine.UI;
 
 namespace Cards
 {
@@ -17,6 +18,7 @@ namespace Cards
         [Header("Logic")]
         [SerializeField] private int indexInHand;
         [SerializeField] private NetworkPlayer owner;
+        [SerializeField] private Image iCollider;
 
         [Header("States")] 
         [SerializeField] private bool isSelected;
@@ -84,6 +86,8 @@ namespace Cards
             isDragging = true;
             
             transform.SetAsLastSibling();
+            iCollider.raycastTarget = false;
+            
 
             visual.Selected();
             visual.OnBeginDrag();
@@ -114,6 +118,7 @@ namespace Cards
             visual.Deselected();
             visual.OnEndDrag();
             dock.PlaceDraggedCard();
+            iCollider.raycastTarget = true;
             
             isDragging = false;
         }

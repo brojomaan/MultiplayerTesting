@@ -94,6 +94,7 @@ MonoBehaviour:
   dock: {fileID: 0}
   indexInHand: 0
   owner: {fileID: 0}
+  iCollider: {fileID: 800056790126149317}
   isSelected: 0
   isHovered: 0
   isAnimating: 0

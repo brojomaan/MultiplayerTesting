@@ -1,25 +1,43 @@
 using System.Collections.Generic;
 using DG.Tweening;
+using Managers;
 using Player;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Cards
 {
-    public class CardDockController : MonoBehaviour
+    public class CardDockController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
+        [Header("Prefabs")]
+        [SerializeField] private CardDockVisual dockVisualPrefab;
         [SerializeField] private CardController cardControllerPrefab;
         [SerializeField] private CardVisual cardVisualPrefab;
+        
+        [Header("Transforms")]
         [SerializeField] private RectTransform rootRect;
-
+        
+        [Header("Visuals")]
+        [SerializeField] private CardDockVisual visual;
+        
+        [Header("Logic")]
         [SerializeField] private List<CardController> cardControllers;
-
         [SerializeField] private float cardSpacing;
         [SerializeField] private CardController draggingCard;
-
+        
         private int currentInsertIndex;
         
-
-
+        private void Start()
+        {
+            Initialize();
+        }
+        public void Initialize()
+        {
+            /*visual = Instantiate(dockVisualPrefab, this.transform, false);
+            visual.transform.position = this.transform.position;*/
+            visual.Initialize();
+        }
+        
         public void ShowHand(int[] cardIds, NetworkPlayer owner)
         {
             Clear();
@@ -30,7 +48,7 @@ namespace Cards
             {
                 CardController controller = Instantiate(cardControllerPrefab, rootRect, false);
                 controller.name = $"card_{i}";
-                controller.transform.localPosition = new Vector3(-cardXOffset + cardSpacing * i, 0f, 0f);
+                controller.transform.localPosition = new Vector3(-cardXOffset + cardSpacing * i, 125f, 0f);
                 
                 CardVisual cVisual = Instantiate(cardVisualPrefab, controller.transform, false);
                 controller.Initialize(cardIds[i], cVisual, owner, cardIds[i], this);
@@ -40,10 +58,11 @@ namespace Cards
         
         private void Clear()
         {
-            foreach (Transform child in this.gameObject.transform)
+            foreach (CardController card in cardControllers)
             {
-                Destroy(child.gameObject);
+                Destroy(card.gameObject);
             }
+            cardControllers.Clear();
         }
 
         public void SetSelectedCard(CardController cc)
@@ -83,7 +102,7 @@ namespace Cards
 
                 Vector3 targetPos = new Vector3(
                     -((cardControllers.Count - 1) * cardSpacing) / 2 + visualIndex * cardSpacing,
-                    0,
+                    125f,
                     0
                 );
 
@@ -136,9 +155,21 @@ namespace Cards
 
             return new Vector3(
                 startX + index * cardSpacing,
-                0f,
+                125f,
                 0f
             );
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            visual.BackgroundAlpha(0.6f, 1, 0.3f);
+            visual.BorderScale(0.1f, 0.1f);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            visual.BackgroundAlpha(1f, 0.6f, 0.3f);
+            visual.BorderScale(0f, 0.1f);
         }
     }
 }
