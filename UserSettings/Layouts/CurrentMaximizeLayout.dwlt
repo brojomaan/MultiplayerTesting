@@ -19,12 +19,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 36
-    width: 1706.6667
+    width: 1706.6666
     height: 920
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 30852
+  controlID: 18361
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 30853
+  controlID: 18362
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 56}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 30854
+  controlID: 18363
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -201,8 +201,8 @@ MonoBehaviour:
     y: 0
     width: 252
     height: 590.6667
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 126}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -253,20 +253,10 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -95564
-      - m_Data: -92440
-      - m_Data: -90330
-      - m_Data: -73126
-      - m_Data: -61930
-      - m_Data: -60474
-      - m_Data: -53218
-      - m_Data: -1456
-      - m_Data: -1374
-      - m_Data: -1370
-      - m_Data: -1320
+      - m_Data: -1402
       - m_Data: -1318
-      - m_Data: 59564
-      - m_Data: 59634
+      - m_Data: -12
+      - m_Data: 59642
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2194,8 +2184,8 @@ MonoBehaviour:
     y: 0
     width: 452.00006
     height: 590.6667
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -3007,9 +2997,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -0.9252372, y: -3.791689, z: 89.99383}
+    m_Target: {x: -0.068757825, y: -2.2769377, z: 120.10238}
     speed: 2
-    m_Value: {x: -0.9252372, y: -3.791689, z: 89.99383}
+    m_Value: {x: -0.068757825, y: -2.2769377, z: 120.10238}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -3059,9 +3049,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.1877167
+    m_Target: 5.8051214
     speed: 2
-    m_Value: 1.1877167
+    m_Value: 5.8051214
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -3208,7 +3198,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs/Cards
+    - Assets/Scripts/Cards
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -3218,7 +3208,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs/Cards
+  - Assets/Scripts/Cards
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\m0j0m\PersonalUnityGames\MultiplayerTesting
   m_LockTracker:
@@ -3227,14 +3217,14 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs:
-    - m_Data: 60462
+    - m_Data: 60652
     m_LastClickedID:
-      m_Data: 60462
+      m_Data: 60652
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 60238
-    - m_Data: 60360
-    - m_Data: 60366
+    - m_Data: 60346
+    - m_Data: 60472
+    - m_Data: 60478
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -3269,7 +3259,7 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 60238
+    - m_Data: 60346
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -3349,7 +3339,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1367.3334
     y: 0
-    width: 339.33337
+    width: 339.33325
     height: 920
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
@@ -3382,7 +3372,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1367.3334
     y: 78.66667
-    width: 338.33337
+    width: 338.33325
     height: 894
   m_SerializedDataModeController:
     m_DataMode: 0

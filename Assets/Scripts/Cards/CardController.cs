@@ -1,3 +1,4 @@
+using System.Collections;
 using Database;
 using Player;
 using UnityEngine;
@@ -12,8 +13,10 @@ namespace Cards
         [Header("References")] 
         [SerializeField] private RectTransform rootRect;
         [SerializeField] private CardData data;
+        public CardData Data => data;
         [SerializeField] private CardVisual visual;
         [SerializeField] private CardDockController dock;
+        [SerializeField] private GameObject onHover;
         
         [Header("Logic")]
         [SerializeField] private int indexInHand;
@@ -27,6 +30,8 @@ namespace Cards
         [SerializeField] private bool isDragging;
 
         private Vector3 velocity;
+        private bool wasDroppedOnValidZone;
+        private Coroutine coroutine;
         
         public void Initialize(int cardId, CardVisual cardVisual, NetworkPlayer player, int index, CardDockController dockController)
         {
@@ -38,6 +43,7 @@ namespace Cards
             
             visual = cardVisual;
             visual.Wrap(data);
+            onHover.SetActive(false);
         }
         
         public void OnPointerEnter(PointerEventData eventData)
@@ -47,6 +53,13 @@ namespace Cards
             visual.Shake();
             visual.SwapColour(visual.highlightColour);
             visual.Scale(1.1f, 0.2f);
+            
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+                coroutine = null;
+            }
+            coroutine = StartCoroutine(OnHoverTimer());
 
         }
         
@@ -57,6 +70,19 @@ namespace Cards
             visual.ResetShake();
             visual.SwapColour(visual.cardColour);
             visual.Scale(1f, 0.2f);
+            onHover.SetActive(false);
+            
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+                coroutine = null;
+            }
+        }
+
+        public IEnumerator OnHoverTimer()
+        {
+            yield return new WaitForSeconds(1f);
+            onHover.SetActive(true);
         }
     
         public void OnPointerClick(PointerEventData eventData)
@@ -74,8 +100,6 @@ namespace Cards
                 visual.SwapColour(visual.highlightColour);
                 visual.Scale(1.1f, 0.2f);
             }
-
-            /*owner.SubmitCardServerRpc(indexInHand);*/
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -117,10 +141,22 @@ namespace Cards
         {
             visual.Deselected();
             visual.OnEndDrag();
-            dock.PlaceDraggedCard();
-            iCollider.raycastTarget = true;
+
+            if (!wasDroppedOnValidZone)
+            {
+                dock.PlaceDraggedCard();
+                iCollider.raycastTarget = true;
+                isDragging = false;
+                wasDroppedOnValidZone = false;
+            }
             
-            isDragging = false;
+        }
+
+        public void MarkDroppedOnZone()
+        {
+            wasDroppedOnValidZone = true;
+            owner.SubmitCardServerRpc(indexInHand);
+            Hide();
         }
         
         public void Hide()

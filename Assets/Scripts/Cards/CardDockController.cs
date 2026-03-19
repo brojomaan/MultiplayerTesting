@@ -27,6 +27,7 @@ namespace Cards
         
         private int currentInsertIndex;
         
+        
         private void Start()
         {
             Initialize();
