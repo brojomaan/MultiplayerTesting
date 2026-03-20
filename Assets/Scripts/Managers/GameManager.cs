@@ -11,6 +11,9 @@ namespace Managers
     {
         public static GameManager Instance { get; private set; }
 
+        [SerializeField] private GridManager gridManager;
+        [SerializeField] private UIManager uiManager;
+
         private Queue<GameCommand> commandQueue = new Queue<GameCommand>();
         private Dictionary<ulong, NetworkPlayer> players = new Dictionary<ulong, NetworkPlayer>();
         
@@ -36,6 +39,14 @@ namespace Managers
         private void Start()
         {
             cardDatabase = CardDatabase.Instance;
+
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            gridManager.Initialize();
+            //UIManager needs to go here
         }
 
         public override void OnNetworkSpawn()

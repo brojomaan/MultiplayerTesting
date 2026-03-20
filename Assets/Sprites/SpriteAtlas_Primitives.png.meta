@@ -421,6 +421,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SpriteAtlas_Primitives_3
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 190
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b075081e65e0dd04caefe3f4f0cd37d8
+      internalID: 825881626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -453,6 +475,7 @@ TextureImporter:
       SpriteAtlas_Primitives_16: -701800967
       SpriteAtlas_Primitives_17: -262879050
       SpriteAtlas_Primitives_2: -3300822335463900347
+      SpriteAtlas_Primitives_3: 825881626
       SpriteAtlas_Primitives_7: 225326055441802014
       SpriteAtlas_Primitives_8: -169641110671230388
       SpriteAtlas_Primitives_9: -6592908899983862835

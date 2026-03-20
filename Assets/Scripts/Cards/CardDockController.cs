@@ -34,8 +34,8 @@ namespace Cards
         }
         public void Initialize()
         {
-            /*visual = Instantiate(dockVisualPrefab, this.transform, false);
-            visual.transform.position = this.transform.position;*/
+            /*visual = Instantiate(dockVisualPrefab);
+            visual.transform.localPosition = this.transform.localPosition;*/
             visual.Initialize();
         }
         

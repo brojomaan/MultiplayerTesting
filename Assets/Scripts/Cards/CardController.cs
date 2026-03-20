@@ -10,13 +10,16 @@ namespace Cards
 {
     public class CardController : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
+        [Header("Prefabs")] 
+        [SerializeField] private CardOnHover hoverPrefab;
+        
         [Header("References")] 
         [SerializeField] private RectTransform rootRect;
         [SerializeField] private CardData data;
         public CardData Data => data;
         [SerializeField] private CardVisual visual;
         [SerializeField] private CardDockController dock;
-        [SerializeField] private GameObject onHover;
+        [SerializeField] private CardOnHover onHover;
         
         [Header("Logic")]
         [SerializeField] private int indexInHand;
@@ -43,7 +46,11 @@ namespace Cards
             
             visual = cardVisual;
             visual.Wrap(data);
-            onHover.SetActive(false);
+            onHover.Hide();
+
+            if (hoverPrefab == null) return;
+            onHover = Instantiate(hoverPrefab, transform, false);
+            onHover.transform.localPosition = new Vector3(-200, 250, 0);
         }
         
         public void OnPointerEnter(PointerEventData eventData)
@@ -70,7 +77,7 @@ namespace Cards
             visual.ResetShake();
             visual.SwapColour(visual.cardColour);
             visual.Scale(1f, 0.2f);
-            onHover.SetActive(false);
+            onHover.Hide();
             
             if (coroutine != null)
             {
@@ -82,7 +89,7 @@ namespace Cards
         public IEnumerator OnHoverTimer()
         {
             yield return new WaitForSeconds(1f);
-            onHover.SetActive(true);
+            onHover.Show();
         }
     
         public void OnPointerClick(PointerEventData eventData)
