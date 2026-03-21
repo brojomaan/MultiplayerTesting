@@ -1,3 +1,4 @@
+using Managers;
 using UnityEngine;
 
 namespace Grid
@@ -7,17 +8,18 @@ namespace Grid
         [SerializeField] private Transform root;
         [SerializeField] private int width;
         [SerializeField] private int height;
-        [SerializeField] private float cellSize;
 
         [SerializeField] private CellController cellControllerPrefab;
 
         private bool isLight = false;
         private int groupIndex;
+        [SerializeField] private GridManager gridManager;
 
         public void Initialize()
         {
-            CreateGrid();
             groupIndex = height;
+            gridManager = GridManager.Instance;
+            CreateGrid();
         }
 
         private int GetGroupIndex()
@@ -32,20 +34,17 @@ namespace Grid
     
         public void CreateGrid()
         {
-            float middleX = cellSize * width / 2 - 1;
-            float middleY = cellSize * height / 2 - 3;
-        
-            root.transform.position = new Vector3(-middleX, -middleY, 0);
-        
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)
                 {
                     CellController cc = Instantiate(cellControllerPrefab, transform, false);
-                    cc.transform.localPosition = new Vector3(x * cellSize, y * cellSize, 0);
+                    cc.transform.localPosition = new Vector3(x * gridManager.cellSize, y * gridManager.cellSize, 0);
                     Vector2Int gridPosition = new Vector2Int(x, y);
                     cc.Initialize(gridPosition, isLight, GetGroupIndex());
                     groupIndex--;
+                    
+                    gridManager.AddCellController(cc);
 
                 
                     isLight = !isLight;

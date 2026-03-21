@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Cards;
+using Grid;
 using Managers;
 using Unity.Netcode;
 using UnityEngine;
@@ -12,8 +13,23 @@ namespace Player
         public Deck deck = new Deck();
         public PlayerHand hand = new PlayerHand();
         public List<int> programmedCards = new List<int>();
-
         private int cardAmount = 7;
+        
+        public NetworkVariable<Vector2Int> gridPosition = 
+            new NetworkVariable<Vector2Int>();
+
+        [SerializeField] private PlayerPawnController pawnPrefab;
+        [SerializeField] private PlayerPawnController pawnController;
+        
+        private void OnEnable()
+        {
+            gridPosition.OnValueChanged += OnGridPositionChanged;
+        }
+
+        private void OnDisable()
+        {
+            gridPosition.OnValueChanged -= OnGridPositionChanged;
+        }
 
         public override void OnNetworkSpawn()
         {
@@ -26,6 +42,25 @@ namespace Player
                 2, 2, 2
             };
 
+            if (IsServer)
+            {
+                if (OwnerClientId == 0)
+                {
+                    gridPosition.Value = new Vector2Int(0, 0);
+                    pawnController = Instantiate(pawnPrefab);
+                    pawnController.name = $"pawnController{OwnerClientId}";
+                    CellController cellController = GridManager.Instance.GetCellAtGridPosition(gridPosition.Value);
+                    if (cellController != null)
+                    {
+                        pawnController.Initialize(cellController);
+                    }
+                }
+                else
+                {
+                    gridPosition.Value = new Vector2Int(4, 4);
+                }
+            }
+            
             deck.Initialize(startDeck);
 
             deck.Shuffle();
@@ -103,6 +138,11 @@ namespace Player
                 Debug.Log($"Playing Card");
                 SubmitCardServerRpc(2);
             }
+        }
+
+        private void OnGridPositionChanged(Vector2Int oldPos, Vector2Int gridPos)
+        {
+            pawnController.Move(gridPos);
         }
     }
 }

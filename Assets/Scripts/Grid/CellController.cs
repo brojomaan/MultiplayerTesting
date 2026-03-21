@@ -17,9 +17,21 @@ namespace Grid
             gridTile.Initialize(lightColour, groupIndex);
 
             cell.SetGridTile(gridTile);
+        }
 
+        private void OnMouseEnter()
+        {
+            cell.OnHover();
+        }
 
+        private void OnMouseExit()
+        {
+            cell.OnHoverExit();
+        }
 
+        private void OnMouseDown()
+        {
+            cell.OnClick();
         }
     }
 }

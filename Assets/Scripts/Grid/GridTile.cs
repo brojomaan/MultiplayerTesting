@@ -17,12 +17,12 @@ namespace Grid
             visual.Initialize(lightColour, groupIndex);
         }
 
-        public void OnMouseEnter()
+        public void OnHoverEnter()
         {
             visual.OnHover();
         }
 
-        public void OnMouseExit()
+        public void OnHoverExit()
         {
             visual.OnReset();
         }
